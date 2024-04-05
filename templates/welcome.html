@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Welcome</title>
+    <style>
+        #logout-btn { float: right; }
+    </style>
+</head>
+<body>
+    <h2>Welcome, {{ username }}!</h2>
+    <img id="user-logo" src="{{ url_for('static', filename='user-logo.png') }}" alt="User Logo" onclick="toggleLogout()">
+    <form id="logout-btn" method="GET" action="/logout" style="display: none;">
+        <button type="submit">Logout</button>
+    </form>
+
+    <script>
+        function toggleLogout() {
+            var logoutBtn = document.getElementById("logout-btn");
+            logoutBtn.style.display = (logoutBtn.style.display === "none") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>
